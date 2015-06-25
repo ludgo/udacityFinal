@@ -55,7 +55,69 @@ ul {
   color: #212121;
 }
 
-/* HEADER RESPONSIVE */
+/* MAIN */
+
+main {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* RESTAURANT */
+
+.restaurant {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.restaurant__one {
+  display:block;
+  width:100%;
+  padding:30px;
+  text-align:center;
+}
+
+.restaurant__image {
+  position: relative;
+  background-image: url("images/restaurant.jpg");
+  background-size: cover;
+  height: 200px;
+  padding:0;
+}
+
+.restaurant__name {
+  padding:5px;
+  font-size:2em;
+  font-color:black;
+  background-color: rgb(220,220,220);
+}
+
+.restaurant__options {
+  display:flex;
+  flex-wrap:wrap;
+  background-color: black;
+  font-weight:bold;
+  font-size:1.5em;
+}
+
+.restaurant__opt {
+  width:50%;
+  height:48px;
+  line-height:48px;
+}
+
+.restaurant__edit {
+  text-decoration: none;
+  color: rgb(220,220,220);
+}
+
+.restaurant__delete {
+  text-decoration: none;
+  color:red;
+}
+
+/* RESPONSIVE */
 
 @media screen and (min-width: 450px) {
   .header__title {
@@ -64,7 +126,7 @@ ul {
   }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 600px) {
   .header__title {
     font-size: 4em;
     margin-left: 0.25em;
@@ -72,14 +134,26 @@ ul {
   }
   .header__logo {
     height: 72px;
+    margin-left:30px;
     margin-right: 1em;
+  }
+  .restaurant__one {
+    width:50%;
+  }
+  .restaurant__opt {
+    height:auto;
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1200px) {
   main, .header__inner, .restaurant {
-    width: 930px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
+  .restaurant__one {
+    width:33.333333%;
+  }
 }
+
+
