@@ -1,3 +1,8 @@
+* {
+  -webkit-margin-before:0;
+  -webkit-margin-after:0;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -12,17 +17,16 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  margin: 0; 
+  margin: 0;
 }
 
 header, nav, footer, section, article, div {
   box-sizing: border-box;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+a {
+  text-decoration: none;
+  color:black;
 }
 
 /* HEADER */
@@ -46,13 +50,22 @@ ul {
   margin-top: 12px;
 }
 
-.header__title {
+.header__titles {
   font-weight: 300;
-  font-size: 2em;
   margin: 0.5em 0.25em 0.5em 0em;
   vertical-align: bottom;
-  display: inline-block;
+  display:inline-block;
+}
+
+.header__title {
+  font-size: 2em;
   color: #212121;
+}
+
+.header__subtitle {
+  font-size: 1.25em;
+  color: grey;
+  text-align: center;
 }
 
 /* MAIN */
@@ -74,11 +87,13 @@ main {
 .restaurant__one {
   display:block;
   width:100%;
+  max-width:400px;
   padding:30px;
   text-align:center;
 }
 
 .restaurant__image {
+  width:100%;
   position: relative;
   background-image: url("images/restaurant.jpg");
   background-size: cover;
@@ -108,13 +123,17 @@ main {
 }
 
 .restaurant__edit {
-  text-decoration: none;
   color: rgb(220,220,220);
 }
 
 .restaurant__delete {
-  text-decoration: none;
   color:red;
+}
+
+.restaurant__text {
+  width:100%;
+  padding: 30px 30px 0px 30px;
+  font-size:1.5em;
 }
 
 /* RESPONSIVE */
@@ -122,26 +141,40 @@ main {
 @media screen and (min-width: 450px) {
   .header__title {
     font-size: 2.5em;
-    vertical-align: bottom;
+  }
+  .header__subtitle {
+    font-size: 1.5em;
   }
 }
 
 @media screen and (min-width: 600px) {
+  .restaurant__one {
+    width:50%;
+  }
+}
+
+@media screen and (min-width: 610px) {
   .header__title {
     font-size: 4em;
     margin-left: 0.25em;
-    vertical-align: bottom;
+  }
+  .header__subtitle {
+    font-size: 2.5em;
+    margin-left: 0.25em;
   }
   .header__logo {
     height: 72px;
     margin-left:30px;
     margin-right: 1em;
   }
-  .restaurant__one {
-    width:50%;
-  }
   .restaurant__opt {
     height:auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .restaurant__one {
+    width:33.333333%;
   }
 }
 
@@ -151,8 +184,11 @@ main {
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurant__one {
-    width:33.333333%;
+}
+
+@media screen and (min-width: 400px) {
+  #restaurant__id {
+    min-width: 400px;
   }
 }
 
