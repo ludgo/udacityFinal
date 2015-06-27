@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='shortcut icon' type='image/x-icon' href='../static/images/favicon.ico' />
   <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway'>
-  <link rel='stylesheet' type='text/css' href="../static/styles.css">
-<!--  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css') }}"> -->
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
@@ -23,72 +22,17 @@
 
     <main>
 	    <section class="restaurant">
-	      <h3 class="restaurant__text"><a href="#">Create new restaurant</a></h3>
+	      <h3 class="restaurant__text"><a href="{{ url_for('newRestaurant') }}">Create new restaurant</a></h3>
+{{% for restaurant in restaurants %}}	      
 	      <div class="restaurant__one">
 	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
+	        <h2 class="restaurant__name">{{ restaurant.name }}</h2>
 	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
+	          <div class="restaurant__opt"><a class="restaurant__grey" href="{{ url_for('editRestaurant', restaurant_id = restaurant.id) }}">EDIT</a></div>
+	          <div class="restaurant__opt"><a class="restaurant__delete" href="{{ url_for('deleteRestaurant', restaurant_id = restaurant.id) }}">DELETE</a></div>
 	        </div>
 	      </div>
-
-	      <div class="restaurant__one">
-	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
-	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
-	        </div>
-	      </div>
-
-	      <div class="restaurant__one">
-	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
-	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
-	        </div>
-	      </div>
-
-	      <div class="restaurant__one">
-	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
-	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
-	        </div>
-	      </div>
-
-	      <div class="restaurant__one">
-	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
-	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
-	        </div>
-	      </div>
-
-	      <div class="restaurant__one">
-	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
-	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
-	        </div>
-	      </div>
-
-	      <div class="restaurant__one">
-	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">Restaurant name</h2>
-	        <div class="restaurant__options">
-	          <div class="restaurant__opt"><a class="restaurant__grey" href="#">EDIT</a></div>
-	          <div class="restaurant__opt"><a class="restaurant__delete" href="#">DELETE</a></div>
-	        </div>
-	      </div>
-
-	      
-	      
+{{% endfor %}}
 		</section>
 	</main>
 </body>
