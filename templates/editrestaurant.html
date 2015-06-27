@@ -24,14 +24,34 @@
 
     <main>
 	    <section class="restaurant">
-	    	<h3 class="restaurant__text">Are you sure when deleting {{ deletedRestaurant.name }}?</h3>
+	    	<h3 class="restaurant__text">Edit the restaurant</h3>
+	      	<div class="restaurant__input">
+				<div>
+					<label for="name">Name</label>
+					<div><input id="name" type='text' name='editedName' value='{{editedRestaurant.name}}'></div>
+				</div>
+				<div>
+					<label for="description">Description</label>
+					<div><input id="description" type='text' name='editedDescription' value='{{editedRestaurant.description}}'></div>
+				</div>
+				<div>
+					<label for="city">City</label>
+					<div><input id="city" type='text' name='editedCity' value='{{editedRestaurant.city}}'></div>
+				</div>
+				<div>
+					<label for="state">State</label>
+					<div><input id="state" type='text' name='editedState' value='{{editedRestaurant.state}}'></div>
+				</div>
+			</div>
+
 	      	<div class="restaurant__one" id="restaurant__only">
 	        	<div class="restaurant__image"></div>
 	        	<div class="restaurant__options">
-	          		<div class="restaurant__opt"><input type='submit' value="DELETE" class="restaurant__delete"></div>
-	          		<div class="restaurant__opt"><a class="restaurant__grey" href="#">Cancel</a></div>
+	          		<div class="restaurant__opt"><input type='submit' value="EDIT" class="restaurant__grey"></div>
+	          		<div class="restaurant__opt"><a class="restaurant__grey" href="#">Refresh</a></div>
 	        	</div>
 	     	</div>
+
 	      	<div class="restaurant__one" id="restaurant__arrow">
 		    	<div class="restaurant__text"><a href="#">&#8592; back to restaurants</a></div>
 	       		<div class="restaurant__text"><a href="#">to restaurant menu &#8594;</a></div>

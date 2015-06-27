@@ -15,19 +15,19 @@ class Restaurant(Base):
    
     #Mappers
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
+    name = Column(String(50), nullable=False)
     description = Column(String(250))
-    city = Column(String(80))
-    state = Column(String(80))
+    city = Column(String(50))
+    state = Column(String(50))
  
 class MenuItem(Base):
     __tablename__ = 'menu_item'
 
-    name =Column(String(80), nullable = False)
+    name = Column(String(50), nullable = False)
     id = Column(Integer, primary_key = True)
     description = Column(String(250))
     price = Column(String(8))
-    course = Column(String(250))
+    course = Column(String(50))
     restaurant_id = Column(Integer,ForeignKey('restaurant.id'))
     restaurant = relationship(Restaurant)
 
