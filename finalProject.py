@@ -15,7 +15,7 @@ session = DBSession()
 @app.route('/restaurants/')
 def showRestaurants():
     restaurants = session.query(Restaurant).all()
-    return render_template('restaurants.html', restaurants=restaurants)
+    return render_template('showRestaurants.html', restaurants=restaurants)
 
 @app.route('/restaurant/new/', methods=['GET', 'POST'])
 def newRestaurant():
@@ -62,7 +62,7 @@ def showMenu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant.id)
     return render_template('showmenu.html', restaurant=restaurant, items=items)
-
+'''
 @app.route('/restaurant/<int:restaurant_id>/menu/new/', methods=['GET', 'POST'])
 def newMenuItem(restaurant_id):
 	restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
@@ -105,7 +105,7 @@ def deleteMenuItem(restaurant_id, menu_id):
         return redirect(url_for('showMenu', restaurant_id=restaurant_id))
     else:
         return render_template('deletemenuitem.html', restaurant=restaurant, deletedItem=deletedItem)
-
+'''
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.debug = True

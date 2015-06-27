@@ -92,6 +92,7 @@ input[type="text"], input[type="textarea"] {
   font-size: 1.25em;
   color: grey;
   text-align: center;
+  text-transform: uppercase;
 }
 
 /* MAIN */
@@ -116,7 +117,7 @@ main {
   display:block;
   width:100%;
   max-width:400px;
-  padding: 0px 30px 60px 30px;
+  padding: 0px 30px 30px 30px;
   text-align:center;
   line-height:48px;
 }
@@ -124,13 +125,12 @@ main {
 .restaurant__image {
   width:100%;
   position: relative;
-  background-image: url("images/restaurant.jpg");
+  background-image: url("https://scontent-vie1-1.xx.fbcdn.net/hphotos-xft1/v/t34.0-12/11667169_999151003462483_1381018953_n.jpg?oh=a5b6701e678c2217a4e2403ced990a9d&oe=55908D35");
   background-size: cover;
   height: 200px;
 }
 
 .restaurant__name {
-  padding:5px;
   font-size: 1.25em;
   font-color:black;
   background-color: rgb(220,220,220);
@@ -166,7 +166,37 @@ main {
   padding: 0px 30px 20px 30px;
 }
 
+.restaurant__items {
+  width: 100%;
+}
+
+.restaurant__item {
+  width:100%;
+  padding: 0pc 30px 3px 30px;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+#item__price {
+  width:50%;
+  max-width: 200px;
+  text-align: left;
+}
+
+#item__course {
+  width:50%;
+  text-align: right;
+}
+
 /* RESPONSIVE */
+@media screen and (min-width: 400px) {
+  #item__course {
+    text-align: left;
+  }
+  #item__only {
+    min-width: 400px;
+  }
+}
 
 @media screen and (min-width: 450px) {
   .header__title {
@@ -201,6 +231,12 @@ main {
     height: 72px;
     margin-left:30px;
     margin-right: 1em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .restaurant__items {
+    width:50%;
   }
 }
 

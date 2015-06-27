@@ -5,7 +5,7 @@
   <title>Restaurant Network</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='shortcut icon' type='image/x-icon' href='../static/images/favicon.ico' />
+  <link rel='shortcut icon' type='image/x-icon' href='{{ url_for('static', filename='favicon.ico') }}' />
   <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway'>
   <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css') }}">
 </head>
@@ -13,7 +13,7 @@
 <body>
 	<header class="header">
       <div class="header__inner">
-        <img class="header__logo" src="../static/images/logo.png">
+        <img class="header__logo" src="{{ url_for('static', filename='logo.png') }}">
         <div class="header__titles">
         	<h1 class="header__title">Restaurant Network</h1>
         </div>
@@ -23,16 +23,16 @@
     <main>
 	    <section class="restaurant">
 	      <h3 class="restaurant__text"><a href="{{ url_for('newRestaurant') }}">Create new restaurant</a></h3>
-{{% for restaurant in restaurants %}}	      
+{% for restaurant in restaurants %}	      
 	      <div class="restaurant__one">
 	        <div class="restaurant__image"></div>
-	        <h2 class="restaurant__name">{{ restaurant.name }}</h2>
+	        <h3 class="restaurant__name">{{ restaurant.name }}</h3>
 	        <div class="restaurant__options">
 	          <div class="restaurant__opt"><a class="restaurant__grey" href="{{ url_for('editRestaurant', restaurant_id = restaurant.id) }}">EDIT</a></div>
 	          <div class="restaurant__opt"><a class="restaurant__delete" href="{{ url_for('deleteRestaurant', restaurant_id = restaurant.id) }}">DELETE</a></div>
 	        </div>
 	      </div>
-{{% endfor %}}
+{% endfor %}
 		</section>
 	</main>
 </body>
