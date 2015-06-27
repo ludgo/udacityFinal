@@ -13,7 +13,7 @@
 <body>
 	<header class="header">
       <div class="header__inner">
-        <img class="header__logo" src="{{ url_for('static', filename='logo.png') }}">
+        <a href="{{ url_for('showRestaurants') }}"><img class="header__logo" src="{{ url_for('static', filename='logo.png') }}"></a>
         <div class="header__titles">
         	<h1 class="header__title">Restaurant Network</h1>
         	<h2 class="header__subtitle">{{editedRestaurant.name}}</h2>
@@ -53,7 +53,7 @@
 
 	      	<div class="restaurant__one" id="restaurant__arrow">
 		    	<div class="restaurant__text"><a href="{{ url_for('showRestaurants') }}">&#8592; back to restaurants</a></div>
-	       		<div class="restaurant__text"><a href="#">to restaurant menu &#8594;</a></div>
+	       		<div class="restaurant__text"><a href="{{ url_for('showMenu', restaurant_id=editedRestaurant.id) }}">to restaurant menu &#8594;</a></div>
 	        </div>
 		</section>
 </form>

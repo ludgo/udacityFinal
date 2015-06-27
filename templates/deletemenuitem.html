@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Restaurant Network</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='shortcut icon' type='image/x-icon' href='{{ url_for('static', filename='favicon.ico') }}' />
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway'>
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+	<header class="header">
+      <div class="header__inner">
+        <a href="{{ url_for('showRestaurants') }}"><img class="header__logo" src="{{ url_for('static', filename='logo.png') }}"></a>
+        <div class="header__titles">
+        	<h1 class="header__title">Restaurant Network</h1>
+          	<h2 class="header__subtitle">{{restaurant.name}}</h2>
+        </div>
+      </div>
+    </header>
+
+    <main>
+<form action= "{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=deletedItem.id) }}" method = 'POST'>
+	    <section class="restaurant">
+	    	<h3 class="restaurant__text">Are you sure when deleting {{ deletedItem.name }}?</h3>
+	      	<div class="restaurant__one" id="restaurant__only">
+	        	<div class="restaurant__options">
+	          		<div class="restaurant__opt"><input type='submit' value="DELETE" class="restaurant__delete"></div>
+	          		<div class="restaurant__opt"><a class="restaurant__grey" href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">Cancel</a></div>
+	        	</div>
+	     	</div>
+
+		    <div class="restaurant__one restaurant__text"><a href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">&#8592; back to menu</a></div>
+		</section>
+</form>
+	</main>
+</body>
+
+</html>
